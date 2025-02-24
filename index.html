@@ -7,25 +7,53 @@
             background-image: url('cinema.png');
             color: white; /* Sets text color to white */
             font-weight: bold; /* Makes text bold */
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            margin: 0; /* Removes margin */
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Centers content vertically and horizontally */
             align-items: center;
-            height: 100vh;
+            justify-content: center;
             text-align: center;
         }
-        h1 {
-            text-align: center;
-            font-size: 3em; /* Increase title text size */
+        @-webkit-keyframes drawIn {
+            0% {
+                stroke: transparent;
+                stroke-dashoffset: 10000;
+                stroke: red; /* Sets initial color to red */
+            }
+            75% {
+                stroke: white; /* Changes color to white */
+            }
         }
-        audio {
-            transform: scale(1.5); /* Increase the size of the audio player */
+        @keyframes drawIn {
+            0% {
+                stroke: transparent;
+                stroke-dashoffset: 10000;
+                stroke: red; /* Sets initial color to red */
+            }
+            75% {
+                stroke: yellow; /* Changes color to yellow*/
+            }
+        }
+        svg {
+            width: 400px;
+            height: auto;
+            -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+        }
+        .mask-path {
+            stroke: white; /* Sets initial color to white */
+            stroke-dasharray: 10000;
+            -webkit-animation: drawIn 2.5s 1s ease-in both;
+                    animation: drawIn 2.5s 1s ease-in both;
         }
     </style>
 </head>
 <body>
-    <h1>Écoute bien cet audio Grégoire !!</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 20">
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="mask-path" font-size="14">
+            Écoute bien cet audio Grégoire !!
+        </text>
+    </svg>
     <audio controls>
         <source src="https://lorducoffee.github.io/Audio/AnnivGreg.mp3" type="audio/mp3">
         Votre navigateur ne supporte pas l'élément audio.
