@@ -6,18 +6,30 @@
         body {
             background-image: url('cinema.png');
             color: white; /* Sets text color to white */
-            font-weight: bold; /* Makes text 
+            font-weight: bold; /* Makes text bold */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
         }
         h1 {
             text-align: center;
+            font-size: 3em; /* Increase title text size */
+        }
+        audio {
+            transform: scale(1.5); /* Increase the size of the audio player */
         }
     </style>
 </head>
 <body>
     <h1>Écoute bien cet audio Grégoire !!</h1>
     <audio controls>
-         <source src="https://lorducoffee.github.io/Audio/AnnivGreg.mp3" type="audio/mp3">
+        <source src="https://lorducoffee.github.io/Audio/AnnivGreg.mp3" type="audio/mp3">
         Votre navigateur ne supporte pas l'élément audio.
     </audio>
 </body>
 </html>
+
